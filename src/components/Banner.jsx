@@ -21,7 +21,7 @@ const Banner = () => {
   const [videoActive, setVideoActive] = useState(false);
   const [textsliderActive, setTextsliderActive] = useState(false);
   const [animationDivRemove, setAnimationDivRemove] = useState(false);
-
+  
 
   useEffect(() => {
     let intervalCols;
@@ -74,14 +74,18 @@ const intervalColsInitial = setInterval(() => {
 
   const handleLearnMoreClick = () => {
     const targetElement = document.querySelector('.connect_blockchain');
-  
+    const bannerElement = document.querySelector('.banner');
+    const headerElement = document.querySelector('header');
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetHeight,
+        top: bannerElement.offsetHeight - headerElement.offsetHeight,
         behavior: 'smooth',
       });
     }
   };
+
+
+  
   return (
     <div className='banner'>
       
