@@ -130,7 +130,9 @@ td {text-align: left; font-weight: normal;}
 
 body *{ font-family: 'Neue Haas Grotesk Display Pro'; }
 body{padding-top: 86px;}
-header{padding: 20px 170px 20px 125px;box-shadow: 0px 4px 4px #00A68A1A;position: fixed; width: 100%; top: 0; z-index: 9999;left: 0;}
+header { padding: 20px 170px 20px 125px; box-shadow: 0px 4px 4px #00A68A1A; position: fixed; width: 100%; top: -150px; z-index: 9999; left: 0; transition: 0.8s linear all; background-color: #fff;}
+header.active{top: 0;transition: 0.5s ease all;}
+header.active.isactive{transform: translateY(-110%);transition: 0.5s ease all;}
 header .brand{line-height: 40.13px;}
 header .right_col{}
 header ul{list-style: none;}
@@ -143,7 +145,8 @@ header .wallet{border: 1px solid #00A68A;border-radius: 32px;margin-left: 53px;p
 header .wallet:hover{background-color: #00A68A;color: #fff;box-shadow: 0px 4px 10px #00a68a94;}
 
 .banner{position: relative;min-height: 986px;}
-.banner .textslider{position: absolute;left: 125px;top:329px;}
+.banner .textslider{position: absolute;left: 125px;top:329px;transition:0.8s linear all;opacity: 0;    transform: translateY(50%);}
+.banner .textslider.active{opacity: 1;    transform: translateY(0);}
 .banner .textslider h1{font-size: 64.13px;line-height: 70px;font-weight: 300;}
 .banner .textslider h1 span{color: #022821;font-size: 64.13px;line-height: 80px;font-weight: 300;}
 .banner .textslider h1 .changebox{display: inline-block;}
@@ -157,13 +160,170 @@ header .wallet:hover{background-color: #00A68A;color: #fff;box-shadow: 0px 4px 1
 .banner .learnmore em{font-style: normal;font-size: 14px;font-weight: 300;line-height: 19px;color: #00A68A;display: block;}
 .banner .learnmore span { width: 49px; height: 49px; border: 1px solid #00a68a; display: flex; border-radius: 50%; justify-content: center; align-items: center; margin: 0 auto; margin-bottom: 13px; cursor: pointer; }
 .banner video{position: absolute; top: 0; right: 0; object-fit: contain;}
-.banner .count_blog{width: 752px;position: absolute;top:-60px;bottom: 0;left:82px;padding-bottom: 37px;margin: auto;height: fit-content;}
-.banner .count_blog h3{color:#464646;font-size: 40px;line-height: 70px;font-weight: 400;margin-bottom: 13px;}
+.banner .count_blog{width: 752px;position: absolute;top:-60px;bottom: 0;left:82px;padding-bottom: 37px;margin: auto;height: fit-content;transition: 0.5s linear all;}
+.banner .count_blog .wrap{justify-content: flex-start;}
+.banner .count_blog .col{opacity: 0;transition: 0.4s linear all;transition-delay: 1.2s;}
+.banner .count_blog.active .col{opacity: 1;}
+.banner .count_blog.animationdone {opacity: 0;pointer-events: none;}
+.banner .count_blog h3{color:#464646;font-size: 40px;line-height: 70px;font-weight: 400;margin-bottom: 13px;display: flex;}
 .banner .count_blog p{color: #464646;font-size: 18px;line-height: 22px;font-weight: 400;}
+.banner .count_blog .col:not(:last-child) { margin-right: 45px; }
 .banner .animationdiv{position: absolute;right: -25px;top: 100%;width:calc(100% + 25px);height: 69px;padding-top: 1px;}
 .banner .animationdiv::after{content: '';position: absolute;left: 1px;top: -2px;width: 8px;height: 8px;background-color:#464646 ;border-radius: 50%;}
-.banner .animationdiv::before { content: ''; position: absolute; top: -5px; left: 0; width: 100%; background-color: #fff; height: calc(100% + 5px); z-index: 1;transition:0.4s ease all;}
-.banner .animationdiv.active::before { width: 0;}
+.banner .animationdiv::before { content: ''; position: absolute; top: -5px; left: 0; width: 100%; background-color: #fff; height: calc(100% + 5px); z-index: 1;transition:1s linear all;}
+.banner .count_blog.active .animationdiv::before { width: 0;}
 .banner .animationdiv img { max-width: calc(100% - 25px); margin: 0 auto; margin-right: 0; display: block; }
-.banner video{display: none;}
-.banner .img_banner{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+.banner .img_banner{position: absolute;left: 0;top: 0;width: 100%;height: 100%;opacity: 0;transition: 0.4s ease all;}
+.banner .img_banner.active{opacity: 1;}
+.test{width: 100%;height:110vh;border: 1px solid #f00;}
+
+
+
+
+
+
+/* new css */
+.inner_wrapper{max-width: 1660px;margin: 0 auto;}
+.connect_blockchain{padding-bottom: 140px;}
+.connect_blockchain .left_text{width: 40%;}
+.connect_blockchain .left_text h3{font-size: 60px;font-weight: 100;line-height: 1.16;}
+.connect_blockchain .right_video{width: 60%;}
+.connect_blockchain .right_video video{max-width: 100%;}
+
+.particle_div{background-image: url(../src/assets/images/bg_particle.jpg);background-repeat: no-repeat;background-position: center center;display: flex;}
+.particle_div .middle_section{text-align: center;margin: auto;padding-top: 200px;padding-bottom: 187px;}
+.particle_div .middle_section .infotext_box h4{color: #FFFFFF;font-size: 60px;font-weight: 100;line-height: 1.16;margin-bottom: 54px;}
+.particle_div .middle_section .infotext_box{padding-bottom: 140px;margin: 0 auto;}
+.particle_div .middle_section .infotext_box:last-child{padding-bottom: 0;}
+.btn_global{background-color: #FFFFFF;border-radius: 60.299px;color: #00A68A;font-size: 22px;font-style: normal;font-weight: 500;
+line-height: normal;padding: 10px 15px 10px 25px;transition: 0.5s all ease;-webkit-transition: 0.5s all ease;-o-transition: 0.5s all ease;-moz-transition: 0.5s all ease;}
+.btn_global:hover{background-color: #00A68A;color: #FFFFFF;}
+.btn_global img{display:inline-block;vertical-align:middle;padding-left:10px;}
+.particle_div .middle_section .infotext_box:first-child{max-width: 620px;}
+
+.onchain_container{text-align: center;padding-top: 250px;padding-bottom: 150px;}
+.onchain_container h4{color: #00A68A;line-height: 1.33;font-size: 45px;font-weight: 100;max-width: 1000px;margin: 0 auto;}
+
+.subscribe_wrapper{background-image: url(../src/assets/images/bg_layer.jpg);background-repeat: no-repeat;background-position: center center;
+padding: 60px 10px;background-size: cover;max-width: 1400px;margin: 0 auto;border-radius: 36px;text-align: center;margin-bottom: 140px;}
+.subscribe_wrapper h4{color: #F0F7F6;font-size: 45px;font-style: normal;font-weight: 100;line-height: 1;margin-bottom: 50px;}
+.subscribe_wrapper .subscribe_inner{max-width: 687px;margin: 0 auto;}
+.subscribe_wrapper .from_group{position: relative;}
+.subscribe_wrapper .from_group .in_field{width: 100%;background-color: #FFFFFF;border: 0px solid transparent;border-radius: 51.044px;height: 53px;padding-left: 36px;
+color: #032221; font-family: 'Neue Haas Grotesk Display Pro'; font-size: 17.015px;font-weight: 300;}
+.subscribe_wrapper .from_group .submit_btn{background-color: #00A68A;color: #FFFFFF;font-size: 17.015px;font-weight: 100;letter-spacing: 1px;position: absolute;right: 2px;
+bottom: 0;top: 0;height: 92%;margin: auto;transition: 0.5s all ease;-webkit-transition: 0.5s all ease;-o-transition: 0.5s all ease;-moz-transition: 0.5s all ease;}
+.subscribe_wrapper .from_group .submit_btn:hover{opacity: 0.6;}
+
+
+/* footer css */
+footer{background: linear-gradient(235deg, #022821 19.99%, #00A287 116.15%);padding: 26px 56px;}
+footer .top-footer{border-bottom:1px solid rgba(255,255,255,0.10);padding:0 60px 32px;margin-bottom:25px;}
+footer .top-footer .brand-logo a{line-height:1;font-size:24px;color:#fff;}
+footer .bottom-footer ul :is(li,a){line-height:0;font-size:0;}
+footer .bottom-footer ul{list-style:none;display:flex;gap:0 16px;align-items:center;}
+footer .bottom-footer{padding:0 69px;display:flex;align-items:center;justify-content:space-between;}
+footer .copyright{color:rgba(241,247,246,0.30);text-align:right;font-size:14px;font-style:normal;font-weight:400;line-height:22px;}
+footer .bottom-footer ul li:hover a svg{opacity:0.5;}
+footer .bottom-footer ul li:hover a svg{transition:0.4s ease all;}
+
+
+
+/* .banner .textslider { opacity: 1; transform: translateY(0); }
+.banner .count_blog { opacity: 1 !important; pointer-events: all !important; } */
+
+
+
+
+@media (max-width:1750px){  
+    
+    .inner_wrapper{padding: 0px 20px;}
+    .connect_blockchain .left_text h3{font-size: 44px;}
+    .particle_div .middle_section .infotext_box h4{font-size: 46px;}
+    .particle_div .middle_section .infotext_box{max-width: 960px;padding-bottom: 80px;}
+    .onchain_container{padding-top: 160px;padding-bottom: 100px;}
+    .onchain_container h4{font-size: 40px;}
+    .subscribe_wrapper h4{font-size: 38px;}
+    .subscribe_wrapper .subscribe_inner{max-width: 580px;}
+    .particle_div .middle_section{padding-top: 130px;padding-bottom: 120px;}
+
+    .banner { min-height: 700px; overflow: hidden;}
+    .banner .img_banner { left: 10%; }
+    .banner .textslider { top: 0; bottom: 0; margin: auto; height: fit-content; }
+    .banner .learnmore { bottom: 20px; margin: 0 auto; }
+    .banner .textslider{left: 85px;}
+
+}
+@media (max-width:1499px){  
+    header { padding: 20px 125px 20px 125px; }
+    .banner .count_blog h3 { font-size: 30px; line-height: 50px; margin-bottom: 8px; }
+    .banner .count_blog { width: 662px; }
+}
+@media (max-width:1399px){
+    header { padding: 20px 40px ; }
+    .banner .count_blog { width: 600px; left: 40px; }
+    .banner .count_blog .col:not(:last-child) { margin-right: 15px; }
+    .banner .textslider { left: 40px; }
+    .banner { min-height: 600px; }
+    .banner .img_banner { left: 7%; }
+}
+@media (max-width:1360px){
+    .subscribe_wrapper{max-width: 90%;}
+    .onchain_container video{max-width: 100%;}
+}
+@media (max-width:1279px){
+    .banner .count_blog p { font-size: 14px; line-height: 18px; }
+    .banner .count_blog h3 { font-size: 25px; line-height: 40px; margin-bottom: 8px; }
+    .banner .count_blog { width: 470px; left: 40px; }
+    .banner { min-height: 500px; }
+    .banner .textslider h1 { font-size: 50px; line-height: 60px; }
+    .banner .textslider h1 span { font-size: 50px; line-height: 60px; }
+    .changebox { margin-bottom: -3px; height: 61px; width: 440px; }
+
+
+
+}
+@media (max-width:1199px){
+    footer{padding: 26px;}
+    footer .top-footer{padding:0 30px 25px;margin-bottom:15px;}
+    footer .bottom-footer{padding:0 30px;}
+    .connect_blockchain .left_text h3{font-size: 30px;}
+    .connect_blockchain{padding-bottom: 60px;}
+    .particle_div .middle_section{padding-top: 90px;padding-bottom: 90px;}
+    .particle_div .middle_section .infotext_box h4{font-size: 32px;margin-bottom: 30px;}
+    .particle_div .middle_section .infotext_box{padding-bottom: 50px;}
+    .btn_global{font-size: 18px;padding: 4px 6px 4px 25px;}
+    .onchain_container{padding-top: 90px;padding-bottom: 80px;}
+    .onchain_container h4{font-size: 32px;}
+    .subscribe_wrapper h4{font-size: 28px;}
+    .subscribe_wrapper{padding: 50px 10px;margin-bottom: 60px;}
+
+
+}
+@media (max-width:1023px){
+
+}
+@media (max-width:767px){
+    footer{padding:25px 15px;}
+    footer .top-footer{padding:0px 15px 25px;margin-bottom:25px;text-align:center;}
+    footer .bottom-footer{padding:0 15px;flex-wrap:wrap;gap:20px 0;justify-content:center;}
+
+    .connect_blockchain .right_video{width: 100%;}
+    .connect_blockchain .left_text{width: 100%;}
+    .connect_blockchain{padding-bottom: 30px;}
+    .particle_div .middle_section{padding: 30px 0px;}
+    .particle_div .middle_section .infotext_box h4{font-size: 22px;margin-bottom: 15px;}
+    .btn_global{font-size: 15px;}
+    .btn_global img{max-width: 38px;}
+    .particle_div .middle_section .infotext_box{padding-bottom: 30px;}
+    .onchain_container{padding-top: 40px;padding-bottom: 30px;}
+    .onchain_container h4{font-size: 22px;}
+    .subscribe_wrapper{max-width: 95%;padding: 50px 20px;}
+    .subscribe_wrapper h4{font-size: 22px;margin-bottom: 40px;}
+    .subscribe_wrapper .from_group .submit_btn{position: relative;margin-top: 20px;height: 50px;}
+    
+
+
+}
+
+
