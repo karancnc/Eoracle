@@ -26,23 +26,11 @@ const Banner = () => {
   useEffect(() => {
     let intervalCols;
 
-    // const checkTextSliderActive = () => {
-    //   if (document.querySelector('.textslider.active')) {
-    //     intervalCols = setInterval(() => {
-    //       setActiveIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    //     }, 1000);
-    //   }
-    // };
-  
-   
-  // },
-
     const timeoutvideo = setTimeout(() => {
       setVideoActive(true);
     }, 500);
     const timeouttext = setTimeout(() => {
       setTextsliderActive(true);
-      // checkTextSliderActive();
      intervalCols = setInterval(() => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % phrases.length);
       }, 2500);
@@ -51,21 +39,11 @@ const Banner = () => {
     // Delayed start for animationdiv after 5 seconds
     const timeoutAnimationDiv = setTimeout(() => {
       setAnimationDivActive(true);
-      // checkTextSliderActive();
     }, 2500);
     const timeoutremove = setTimeout(() => {
       setAnimationDivRemove(true);
     }, 6500);
-    // Add 'active' class to each .col one by one after 6 seconds
-    // const intervalColsInitial = setInterval(() => {
-    //   setActiveIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    // }, 2500);
-
     
-// Add 'active' class to each .col one by one after 6 seconds
-  // const intervalColsInitial = setInterval(() => {
-  //   setActiveIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-  // }, 2500);
     return () => {
       clearInterval(intervalCols);
       //clearInterval(intervalColsInitial);

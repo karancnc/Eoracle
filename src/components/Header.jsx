@@ -39,12 +39,12 @@ const Header = () => {
       <a link="#" target="_blank" className='brand'> Eoracle </a>
       <div className={`right_col d-flex ${isMenuOpen ? 'active_menu' : ''}`}>
         <ul className='d-flex'>
-          <li><a link="#" className='active' target="_blank" >Home</a></li>
-          <li><a link="#" target="_blank" >Validators</a></li>
-          <li><a link="#" target="_blank" >Data/ Dapps</a></li>
-          <li><a link="#" target="_blank" >Docs</a></li>
+          <li><a  href="#" className='active' target="_blank" >Home</a></li>
+          <li><a  href="#" target="_blank" >Validators</a></li>
+          <li><a  href="#" target="_blank" >Data/ Dapps</a></li>
+          <li><a  href="#" target="_blank" >Docs</a></li>
         </ul>
-        <a link='#' className='wallet'>Connect Wallet</a>
+        <a href='#' className='wallet'>Connect Wallet</a>
       </div>
       <a href="#" className="toggle-mnu hidden-lg mobile_toggle" data-class= {`${isMenuOpen ? 'on' : ''}`} onClick={handleMenuToggle}><span></span></a>
     </header>
