@@ -4,7 +4,7 @@ import Connect from '../components/Connect';
 import Particle from '../components/Particle';
 import Onchain from '../components/Onchain';
 import Subscribe from '../components/Subscribe';
-import Footer from '../components/Footer';
+
 
 const Home = () => {
   return (
@@ -13,8 +13,7 @@ const Home = () => {
       <Connect/>
       <Particle />
       <Onchain />
-      <Subscribe/>
-      <Footer/>
+      <Subscribe/>     
     </div>
   );
 };

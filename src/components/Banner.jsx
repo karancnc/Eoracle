@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Counter  from './Counter'
 import Arrow from '../assets/images/arrow.png';
-import Line from '../assets/images/line.svg';
-import Video from '../assets/video/Globek.mp4';
+import videoimg from '../assets/images/videoimg.jpg';
+import Video from '../assets/video/Globe_banner.mp4';
 
 const Banner = () => {
   const phrases = [    
@@ -34,7 +34,7 @@ const Banner = () => {
      intervalCols = setInterval(() => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % phrases.length);
       }, 2500);
-    }, 7000);
+    }, 500);
 
     // Delayed start for animationdiv after 5 seconds
     const timeoutAnimationDiv = setTimeout(() => {
@@ -60,9 +60,10 @@ const Banner = () => {
     const targetElement = document.querySelector('.connect_blockchain');
     const bannerElement = document.querySelector('.banner');
     const headerElement = document.querySelector('header');
+    const body_height = document.querySelector('body');
     if (targetElement) {
       window.scrollTo({
-        top: bannerElement.offsetHeight - headerElement.offsetHeight,
+        top: targetElement.offsetTop,
         behavior: 'smooth',
       });
     }
@@ -72,14 +73,14 @@ const Banner = () => {
   
   return (
     <div className='banner'>
-      
-      <video autoPlay muted playsInline preload="metadata" className={`img_banner ${videoActive ? 'active' : ''}`}>
+      <video autoPlay muted playsInline preload="metadata" className={`img_banner ${videoActive ? 'active' : ''} ${animationDivRemove ? 'animationdone' : ''} `}>
         <source src={Video} type="video/mp4" />
       </video>
+      <img src={videoimg} className={`video_image ${animationDivRemove ? 'animationdone' : ''} `} />
       <div className={`textslider ${textsliderActive ? 'active' : ''}`}>
         <h1>
           Extending <br />
-          ethereum
+          Ethereum
           <div className='changebox'>
             {phrases.map((phrase, index) => {
               const isActive = index === activeIndex;
@@ -100,6 +101,7 @@ const Banner = () => {
         </h1>
       </div>
       <div className={`count_blog ${animationDivActive ? 'active' : ''} ${animationDivRemove ? 'animationdone' : ''} `}>
+        <h4>Ethereum Proof of Stake current state</h4>
         <div className='wrap d-flex'>
           <div className='col'>
           
@@ -116,12 +118,13 @@ const Banner = () => {
           </div>
         </div>
         <div className='animationdiv'>
-          <img src={Line} alt='Line' />
+          <span></span>
+          {/* <img src={Line} alt='Line' /> */}
         </div>
       </div>
-      <div className='learnmore' onClick={handleLearnMoreClick} >
+      <div className={`learnmore ${animationDivRemove ? 'animationdone' : ''} `}  onClick={handleLearnMoreClick} >
         <span><img src={Arrow} alt='Arrow' /></span>
-        <em>Learn more</em>
+        {/* <em>Learn more</em> */}
       </div>
     </div>
     

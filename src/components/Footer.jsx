@@ -1,12 +1,33 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="footer">
         <div className="container">
             <div className="top-footer">
-                <div className="brand-logo">
-                    <a href="#" target="_blank" > Eoracle </a>
+                <div className="brand-logo">                   
+                    <Link to="/" > Eoracle </Link>
+                </div>
+                <div className='col'>
+                    <ul>
+                        <li><a href='#'>Know Eoracle</a></li>
+                        <li><Link to="/Validators">Validators</Link></li>
+                        <li><a href='#'>Data/ Dapps</a></li>
+                    </ul>
+                </div>
+                <div className='col'>
+                    <ul>
+                        <li><a href='#'>FAQ</a></li>
+                        <li><a href='#'>Why Restake?</a></li>
+                        <li><a href='#'>Docs</a></li>
+                    </ul>
+                </div>
+                <div className='col'>
+                    <ul>
+                        <li><a href='#'>Aegis Blockchain</a></li>
+                        <li><a href='#'>Crypto-Economic-Security</a></li>
+                        <li><a href='#'>Network Participants</a></li>
+                    </ul>
                 </div>
             </div>
             <div className="bottom-footer">

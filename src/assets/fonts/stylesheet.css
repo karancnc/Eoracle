@@ -142,3 +142,75 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-SharpBoldItalic.woff2') format('woff2'),
+        url('80-kb-SharpBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-SharpItalic.woff2') format('woff2'),
+        url('80-kb-SharpItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-Soft.woff2') format('woff2'),
+        url('80-kb-Soft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-Stencil.woff2') format('woff2'),
+        url('80-kb-Stencil.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-StencilSoft.woff2') format('woff2'),
+        url('80-kb-StencilSoft.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-Grunge.woff2') format('woff2'),
+        url('80-kb-Grunge.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-Sharp.woff2') format('woff2'),
+        url('80-kb-Sharp.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '80-kb';
+    src: url('80-kb-SharpBold.woff2') format('woff2'),
+        url('80-kb-SharpBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

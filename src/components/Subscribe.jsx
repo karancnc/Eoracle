@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowIcon from '../assets/images/button_white.svg';
+import ArrowIcon from '../assets/images/morearrow.png';
 
 const Subscribe = () => {
     return(        

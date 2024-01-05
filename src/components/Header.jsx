@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
   const [headerActive, setHeaderActive] = useState(false);
   const [headerIsactive, setHeaderIsactive] = useState(false);
 
@@ -12,7 +14,7 @@ const Header = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setHeaderActive(true);
-    }, 7000);
+    }, 500);
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -34,19 +36,20 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   return (
     <header className={`d-flex ${headerActive ? 'active' : ''} ${headerIsactive ? 'isactive' : ''}`}>
-      <a link="#" target="_blank" className='brand'> Eoracle </a>
+      <Link to="/" className={`brand ${location.pathname === '/' ? 'active' : ''}`}> Eoracle </Link>
       <div className={`right_col d-flex ${isMenuOpen ? 'active_menu' : ''}`}>
         <ul className='d-flex'>
-          <li><a  href="#" className='active' target="_blank" >Home</a></li>
-          <li><a  href="#" target="_blank" >Validators</a></li>
-          <li><a  href="#" target="_blank" >Data/ Dapps</a></li>
-          <li><a  href="#" target="_blank" >Docs</a></li>
+          <li><Link to="/" className={` ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
+          <li><Link to="/Validators" className={` ${location.pathname === '/Validators' ? 'active' : ''}`}>Validators</Link></li>
+          <li><Link to="/DataDapps" className={` ${location.pathname === '/DataDapps' ? 'active' : ''}`}>Data/ Dapps</Link></li>
+          <li><Link to="/Docs" className={` ${location.pathname === '/Docs' ? 'active' : ''}`}>Docs</Link></li>
         </ul>
         <a href='#' className='wallet'>Connect Wallet</a>
       </div>
-      <a href="#" className="toggle-mnu hidden-lg mobile_toggle" data-class= {`${isMenuOpen ? 'on' : ''}`} onClick={handleMenuToggle}><span></span></a>
+      <a href="#" className="toggle-mnu hidden-lg mobile_toggle" data-class={`${isMenuOpen ? 'on' : ''}`} onClick={handleMenuToggle}><span></span></a>
     </header>
   );
 };
