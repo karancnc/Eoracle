@@ -11,6 +11,10 @@ const Header = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setHeaderActive(true);
@@ -39,15 +43,15 @@ const Header = () => {
 
   return (
     <header className={`d-flex ${headerActive ? 'active' : ''} ${headerIsactive ? 'isactive' : ''}`}>
-      <Link to="/" className={`brand ${location.pathname === '/' ? 'active' : ''}`}> Eoracle </Link>
+      <Link to="/" className={`brand ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu} > Eoracle </Link>
       <div className={`right_col d-flex ${isMenuOpen ? 'active_menu' : ''}`}>
         <ul className='d-flex'>
-          <li><Link to="/" className={` ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-          <li><Link to="/Validators" className={` ${location.pathname === '/Validators' ? 'active' : ''}`}>Validators</Link></li>
-          <li><Link to="/DataDapps" className={` ${location.pathname === '/DataDapps' ? 'active' : ''}`}>Data/ Dapps</Link></li>
-          <li><Link to="/Docs" className={` ${location.pathname === '/Docs' ? 'active' : ''}`}>Docs</Link></li>
+          <li><Link to="/" className={` ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu} >Home</Link></li>
+          <li><Link to="/Validators" className={` ${location.pathname === '/Validators' ? 'active' : ''}`} onClick={closeMenu} >Validators</Link></li>
+          <li><Link to="/DataDapps" className={` ${location.pathname === '/DataDapps' ? 'active' : ''}`} onClick={closeMenu} >Data/ Dapps</Link></li>
+          <li><Link to="/Docs" className={` ${location.pathname === '/Docs' ? 'active' : ''}`} onClick={closeMenu} >Docs</Link></li>
         </ul>
-        <a href='#' className='wallet'>Connect Wallet</a>
+        <a href='#' className='wallet' onClick={closeMenu} >Connect Wallet</a>
       </div>
       <a href="#" className="toggle-mnu hidden-lg mobile_toggle" data-class={`${isMenuOpen ? 'on' : ''}`} onClick={handleMenuToggle}><span></span></a>
     </header>

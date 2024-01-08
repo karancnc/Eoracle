@@ -37,17 +37,16 @@ const Connect = () => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
     lottieRef.current.play();
      i = slides[currentSlide].forward;
-     k--;
+     k++;
   };
-   console.log("currentSlide=="+k)
-   console.log("currentSlideii=="+i)
+  //  console.log("currentSlide=="+k)
+  //  console.log("currentSlideii=="+i)
   if(k == 0){
       animationData = slides[3].forward;
   }else{
       animationData = i;
   }
   
-
   return (
     <div className='connect_blockchain'>
       <div className="inner_wrapper d-flex">
@@ -84,7 +83,7 @@ const Connect = () => {
         <div className='right_video'>
           <video autoPlay loop muted tabIndex="0"
             autobuffer="autobuffer"
-            preload="preload">
+            playsInline preload="metadata" >
             <source src={PlatformVideo} type="video/mp4"/>
           </video>
         </div>

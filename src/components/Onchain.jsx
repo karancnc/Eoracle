@@ -12,7 +12,7 @@ const Onchain = () => {
                 Decentralized <em>infrastructure</em></h4>
                 <video autoPlay loop muted tabIndex="0"
                   autobuffer="autobuffer"
-                  preload="preload">
+                  playsInline preload="metadata" >
                   <source src={ChainVideo} type="video/mp4"/>
                 </video>
                 <h4>Modular Blockchain operates independently <br /> of Ethereum’s block time constraints</h4>
